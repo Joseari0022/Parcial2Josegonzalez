@@ -17,7 +17,7 @@ namespace DAL
         }
 
         public virtual DbSet<Presupuestos> Presupuesto { get; set; }
-        public virtual DbSet<PresupuestoDetalle> PresupuestoDetalle { get; set; }
+        //public virtual DbSet<PresupuestoDetalle> PresupuestoDetalle { get; set; }
 
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)
