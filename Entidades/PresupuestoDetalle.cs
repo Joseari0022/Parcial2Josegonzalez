@@ -9,6 +9,6 @@ namespace Entidades
 {
     public class PresupuestoDetalle
     {
-        [Key]
+ 
     }
 }

@@ -33,17 +33,17 @@ namespace DAL
         //        });
         //}
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Facturas>()
-                .HasMany<Productos>(g => g.producto)
-                .WithMany(e => e.Factura)
-                .Map(ge =>
-                {
-                    ge.MapLeftKey("ProductoId");
-                    ge.MapRightKey("FacturaId");
-                    ge.ToTable("ProductoFactura");
-                });
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Facturas>()
+        //        .HasMany<Productos>(g => g.producto)
+        //        .WithMany(e => e.Factura)
+        //        .Map(ge =>
+        //        {
+        //            ge.MapLeftKey("ProductoId");
+        //            ge.MapRightKey("FacturaId");
+        //            ge.ToTable("ProductoFactura");
+        //        });
+        //}
     }
 }

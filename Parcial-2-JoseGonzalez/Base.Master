@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.Master.cs" Inherits="Parcial_2_JoseGonzalez.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <!---------------------------------------------Bootstrap-------------------------------------------------------->
+    <link rel="stylesheet" href="Css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Css/bootstrap.min.js" />
+
+    <!--------------------------------------------Tema-------------------------------------------------------------->
+    <link rel="stylesheet" href="Css/bootstrapTheme.min.css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Presuspuestos</a>
+
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="Default.aspx">Inicio</a></li>
+                <!--Presupuesto-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Presupuestos <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="UI/Registros/PresupuestoWebForm.aspx">Registro Presupuesto</a></li>
+                        <li><a href="UI/Registros/PresupuestoDetalleWebForm.aspx">Registro Presupuesto Detalle</a></li>
+                        <li><a href="UI/Consultas/ConsultaDetalleWebForm.aspx">Consulta</a></li>
+
+                    </ul>
+                </li>
+
+                <!-----------------------------------------------------Script----------------------------------------------->
+
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </form>
+</body>
+</html>

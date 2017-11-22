@@ -72,7 +72,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.Master" />
+    <Content Include="Base.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -82,17 +82,53 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\bootstrap.min.js" />
+    <Content Include="Css\bootstrapTheme.min.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Parcial2Db.mdf" />
+    <Content Include="UI\Consultas\ConsultaDetalleWebForm.aspx" />
+    <Content Include="UI\Registros\PresupuestoDetalleWebForm.aspx" />
+    <Content Include="UI\Registros\PresupuestoWebForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.Master.cs">
-      <DependentUpon>Default.Master</DependentUpon>
+    <Compile Include="Base.Master.cs">
+      <DependentUpon>Base.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.Master.designer.cs">
-      <DependentUpon>Default.Master</DependentUpon>
+    <Compile Include="Base.Master.designer.cs">
+      <DependentUpon>Base.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Consultas\ConsultaDetalleWebForm.aspx.cs">
+      <DependentUpon>ConsultaDetalleWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\ConsultaDetalleWebForm.aspx.designer.cs">
+      <DependentUpon>ConsultaDetalleWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\PresupuestoDetalleWebForm.aspx.cs">
+      <DependentUpon>PresupuestoDetalleWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\PresupuestoDetalleWebForm.aspx.designer.cs">
+      <DependentUpon>PresupuestoDetalleWebForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\PresupuestoWebForm.aspx.cs">
+      <DependentUpon>PresupuestoWebForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\PresupuestoWebForm.aspx.designer.cs">
+      <DependentUpon>PresupuestoWebForm.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
@@ -108,9 +144,7 @@
       <Name>Entidades</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
