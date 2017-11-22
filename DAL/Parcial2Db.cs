@@ -16,11 +16,8 @@ namespace DAL
                 
         }
 
-        //public virtual DbSet<Usuarios> Usuarios { get; set; }
-        ////public virtual DbSet<FacturaDetalle> FacturaDetalle { get; set; }
-        //public virtual DbSet<Clientes> Clientes { get; set; }
-        //public virtual DbSet<Productos> Productos { get; set; }
-        //public virtual DbSet<Facturas> Factura { get; set; }
+        public virtual DbSet<Presupuestos> Presupuesto { get; set; }
+        public virtual DbSet<PresupuestoDetalle> PresupuestoDetalle { get; set; }
 
 
         //protected override void OnModelCreating(DbModelBuilder modelBuilder)

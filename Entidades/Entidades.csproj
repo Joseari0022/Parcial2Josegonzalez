@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PresupuestoDetalle.cs" />
     <Compile Include="Presupuestos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

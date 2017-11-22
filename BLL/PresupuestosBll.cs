@@ -11,19 +11,19 @@ namespace BLL
 {
     public class PresupuestosBll
     {
-        public static bool Guardar(Usuarios usuarios)
+        public static bool Guardar(Presupuestos presupu)
         {
-            using (var reposi = new Repositorio<Usuarios>())
+            using (var reposi = new Repositorio<Presupuestos>())
             {
                 try
                 {
-                    if (Buscar(u => u.IdUsuarios == usuarios.IdUsuarios) == null)
+                    if (Buscar(u => u.PresupuestosId == presupu.PresupuestosId) == null)
                     {
-                        return reposi.Guardar(usuarios);
+                        return reposi.Guardar(presupu);
                     }
                     else
                     {
-                        return reposi.Modificar(usuarios);
+                        return reposi.Modificar(presupu);
                     }
                 }
                 catch (Exception)
@@ -33,41 +33,41 @@ namespace BLL
             }
         }
 
-        public static bool Modificar(Usuarios usuario)
+        public static bool Modificar(Presupuestos presupu)
         {
             bool modifica = false;
-            using (var reposi = new Repositorio<Usuarios>())
+            using (var reposi = new Repositorio<Presupuestos>())
             {
-                modifica = reposi.Modificar(usuario);
+                modifica = reposi.Modificar(presupu);
             }
 
             return modifica;
         }
 
-        public static bool Eliminar(Usuarios usuario)
+        public static bool Eliminar(Presupuestos presupu)
         {
             bool eliminado = false;
-            using (var reposi = new Repositorio<Usuarios>())
+            using (var reposi = new Repositorio<Presupuestos>())
             {
-                eliminado = reposi.Eliminar(usuario);
+                eliminado = reposi.Eliminar(presupu);
             }
             return eliminado;
         }
 
-        public static Usuarios Buscar(Expression<Func<Entidades.Usuarios, bool>> Busqueda)
+        public static Presupuestos Buscar(Expression<Func<Entidades.Presupuestos, bool>> Busqueda)
         {
-            Usuarios Result = null;
-            using (var repoitorio = new Repositorio<Usuarios>())
+            Presupuestos Result = null;
+            using (var repoitorio = new Repositorio<Presupuestos>())
             {
                 Result = repoitorio.Buscar(Busqueda);
             }
             return Result;
         }
 
-        public static List<Usuarios> Listar(Expression<Func<Usuarios, bool>> busqueda)
+        public static List<Presupuestos> Listar(Expression<Func<Presupuestos, bool>> busqueda)
         {
-            List<Usuarios> retorno = null;
-            using (var conn = new Repositorio<Usuarios>())
+            List<Presupuestos> retorno = null;
+            using (var conn = new Repositorio<Presupuestos>())
             {
                 try
                 {
@@ -82,10 +82,10 @@ namespace BLL
             }
         }
 
-        public static List<Usuarios> ListarTodo()
+        public static List<Presupuestos> ListarTodo()
         {
-            List<Usuarios> retorno = null;
-            using (var conn = new Repositorio<Usuarios>())
+            List<Presupuestos> retorno = null;
+            using (var conn = new Repositorio<Presupuestos>())
             {
                 try
                 {
@@ -95,40 +95,6 @@ namespace BLL
                 catch (Exception)
                 {
 
-                    throw;
-                }
-                return retorno;
-            }
-        }
-
-        public static List<Usuarios> GetListaNombre(string tmp)
-        {
-            List<Usuarios> retorno = null;
-            SistemaVentasDb db = new SistemaVentasDb();
-            {
-                try
-                {
-                    retorno = db.Usuarios.Where(p => p.NombresUsuarios == tmp).ToList();
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                return retorno;
-            }
-
-        }
-        public static List<Usuarios> GetContrasena(string tmp)
-        {
-            List<Usuarios> retorno = null;
-            SistemaVentasDb db = new SistemaVentasDb();
-            {
-                try
-                {
-                    retorno = db.Usuarios.Where(p => p.Contrasena == tmp).ToList();
-                }
-                catch (Exception)
-                {
                     throw;
                 }
                 return retorno;
